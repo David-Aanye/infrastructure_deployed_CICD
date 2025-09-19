@@ -6,8 +6,7 @@ on:
          - main
 
 jobs:
-    deploy_site:
-    name: deploy-infrastructure
+    name: deploy_infrastructure
     runs-on: ubuntu-latest
 
     steps:
