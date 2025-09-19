@@ -8,12 +8,12 @@ terraform {
 }
 
 
-terraform {
+# terraform {
 
-  backend "s3" {
-    bucket = "maabo-bucket"
-    key    = "environment/infrast/cloud/tf.state"
-    region = "ca-central-1"
-  }
+#   backend "s3" {
+#     bucket = "maabo-bucket"
+#     key    = "environment/infrast/cloud/tf.state"
+#     region = "ca-central-1"
+#   }
 
-}
+# }
