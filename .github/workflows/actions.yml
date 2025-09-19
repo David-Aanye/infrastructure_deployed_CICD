@@ -5,8 +5,8 @@ on:
          branches:
          - main
 
-jobs:
-     deploy-infrastructure:
+jobs: 
+    build:
      runs-on: ubuntu-latest
      steps:
          - name: Checkout Repo
