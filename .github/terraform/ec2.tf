@@ -6,17 +6,7 @@ resource "aws_instance" "terra" {
   associate_public_ip_address = false
    
 
-
-  user_data = <<-EOF
-                
-                #!/bin/bash
-                sudo su
-                apt-get update && apt-get upgrade -y
-                apt-get install nginx -y 
-                systemctl enable nginx
-                systemctl start nginx
-                echo "Hello welcome!.."
-                EOF
+ 
   tags = {
     Name = var.server_name
   }
