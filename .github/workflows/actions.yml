@@ -6,9 +6,8 @@ on:
          - main
 
 jobs:
-    name: deploy_infrastructure
-    runs-on: ubuntu-latest
-
+    deploy_infrastructure:
+    runs-on: "ubuntu-latest"
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
