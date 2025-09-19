@@ -4,8 +4,7 @@ resource "aws_instance" "terra" {
   instance_type               = var.instance_type
   subnet_id                   = aws_subnet.prisubnet1.id
   associate_public_ip_address = false
-  key_name                    = aws_key_pair.terradeploy.key_name
-  vpc_security_group_ids      = [aws_security_group.test.id]
+   
 
 
   user_data = <<-EOF
