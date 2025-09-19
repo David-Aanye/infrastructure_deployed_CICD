@@ -7,7 +7,6 @@ on:
 
 jobs:
      deploy-infrastructure:
-     - name: deploy
      runs-on: ubuntu-latest
      steps:
          - name: Checkout Repo
