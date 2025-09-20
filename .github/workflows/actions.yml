@@ -5,38 +5,54 @@ on:
          branches:
               - main
 
-jobs: 
-    build:
-       name: Deloy-Terraform-Infrast
-       runs-on: ubuntu-latest
-
-       steps:
-         - name: Checkout Repo
-           uses: actions/checkout@v4
-
-         - name: Setup Terraform
-           uses: hashicorp/setup-terraform@v3
-           
-           env:
+         env:
              github-token: ${{ secrets.GITHUB_TOKENS }}
              aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
              aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
              aws-region: ${{ secrets.AWS_REGION }}
-             
 
-         - name: Terraform Init
-           run: terraform init 
+         jobs: 
+            build:
+            name: Deloy-Terraform-Infrast
+         runs-on: ubuntu-latest
+
+         steps:
+         - name: Checkout Repo
+           uses: actions/checkout@v2
+
+         - name: Setup Terraform
+           id: init
+           run: terraform init
+        
           
+         - name: Terraform Init
+           id:  validate
+           run: terraform validate
+           working-directory: ./Terraform
+         
 
          - name: Terraform validate
+           id: validate
            run: terraform validate
+           working-directory: ./Terraform
            
 
          - name: Terraform Plan
+           id: plan
            run: terraform plan
+           working-directory: ./Terraform
           
 
          - name: Terraform Apply
+           id: apply
            run: terraform apply -auto-approve
+           working-directory: ./Terraform
+
+          
+           
+           
+             
+
+          
                
     
