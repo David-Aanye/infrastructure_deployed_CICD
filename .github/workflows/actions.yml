@@ -9,6 +9,10 @@ jobs:
     build:
        name: Deloy-Infrastructure
        runs-on: ubuntu-latest
+
+       defaults:
+         run: 
+         working-directory: "terraform"
        
 
        steps:
@@ -39,4 +43,5 @@ jobs:
 
          - name: Terraform Apply
            run: terraform apply -auto-approve
-           
+               
+    
