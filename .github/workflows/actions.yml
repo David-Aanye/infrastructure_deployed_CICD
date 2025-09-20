@@ -10,6 +10,7 @@ jobs:
      runs-on: ubuntu-latest
 
      defaults:
+          run:
              working_directory: terraform
 
      steps:
@@ -24,10 +25,10 @@ jobs:
              aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
              aws-region: ${{ secrets.AWS_REGION }}
          - name: Terraform Init
-           run: terraform -chdir=terraform init
+           run: terraform init
          - name: Terraform validate
-           run: terraform -chdir=terraform validate
+           run: terraform validate
          - name: Terraform Plan
-           run: terraform -chdir=terraform plan
+           run: terraform plan
          - name: Terraform Apply
-           run: terraform -chdir=terraform apply -auto-approve 
+           run: terraform apply -auto-approve 
