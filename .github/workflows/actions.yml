@@ -15,7 +15,7 @@ jobs:
 
      steps:
          - name: Checkout Repo
-           uses: actions/checkout@v4
+           uses: actions/checkout@v2
 
          - name: Setup Terraform
            uses: hashicorp/setup-terraform@v1
@@ -24,6 +24,7 @@ jobs:
              aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
              aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
              aws-region: ${{ secrets.AWS_REGION }}
+             
          - name: Terraform Init
            run: terraform init
          - name: Terraform validate
