@@ -33,7 +33,7 @@ jobs:
 
          - name: Terraform validate
            uses: hashicorp/terraform-github-actions/init@v3.1.2 
-           run: terraform validate
+           
 
          - name: Terraform Plan
            uses: hashicorp/terraform-github-actions/init@v3.1.2 
