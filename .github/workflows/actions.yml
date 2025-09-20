@@ -8,6 +8,10 @@ on:
 jobs: 
     build:
      runs-on: ubuntu-latest
+
+     defaults:
+     working-directory: terraform
+
      steps:
          - name: Checkout Repo
            uses: actions/checkout@v4
