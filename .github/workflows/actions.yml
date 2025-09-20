@@ -7,12 +7,12 @@ on:
 
 jobs: 
     build:
-       name: Deloy-Infrastructure
+       name: Deloy-Terraform-Infrast
        runs-on: ubuntu-latest
 
        defaults:
           run: 
-            working-directory: "terraform"
+            working-directory: ./ter
        
 
        steps:
@@ -30,7 +30,7 @@ jobs:
              
 
          - name: Terraform Init
-           run: terraform init -reconfigure
+           run: terraform init 
           
 
          - name: Terraform validate
