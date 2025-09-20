@@ -10,7 +10,7 @@ jobs:
      runs-on: ubuntu-latest
 
      defaults:
-     working-directory: terraform
+             working_directory: terraform
 
      steps:
          - name: Checkout Repo
