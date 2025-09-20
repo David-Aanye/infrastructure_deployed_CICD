@@ -8,8 +8,6 @@ on:
          env:
              aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
              aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            
-
          jobs: 
             build:
             name: Deloy-Terraform-Infrast
@@ -22,26 +20,18 @@ on:
          - name: Setup Terraform
            id: init
            run: terraform init
-        
-          
          - name: Terraform Init
            id:  validate
            run: terraform validate
            working-directory: ./Terraform
-         
-
          - name: Terraform validate
            id: validate
            run: terraform validate
            working-directory: ./Terraform
-           
-
          - name: Terraform Plan
            id: plan
            run: terraform plan
            working-directory: ./Terraform
-          
-
          - name: Terraform Apply
            id: apply
            run: terraform apply -auto-approve
