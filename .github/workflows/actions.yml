@@ -10,11 +10,6 @@ jobs:
        name: Deloy-Terraform-Infrast
        runs-on: ubuntu-latest
 
-       defaults:
-          run: 
-            working-directory: ./ter
-       
-
        steps:
          - name: Checkout Repo
            uses: actions/checkout@v4
