@@ -11,7 +11,7 @@ jobs:
 
      defaults:
            run:
-working_directory: terraform
+     working_directory: terraform
 
      steps:
          - name: Checkout Repo
