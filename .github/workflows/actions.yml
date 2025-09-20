@@ -30,7 +30,7 @@ jobs:
              
 
          - name: Terraform Init
-           run: terraform init
+           run: terraform init -reconfigure
           
 
          - name: Terraform validate
