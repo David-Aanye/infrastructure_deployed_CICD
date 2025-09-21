@@ -12,11 +12,9 @@ on:
             build:
             name: Deloy-Terraform-Infrast
          runs-on: ubuntu-latest
-
          steps:
          - name: Checkout Repo
            uses: actions/checkout@v2
-
          - name: Setup Terraform
            id: init
            run: terraform init
