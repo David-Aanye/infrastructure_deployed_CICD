@@ -22,7 +22,8 @@ jobs:
         - name: Setup Terraform
           uses: hashicorp/setup-terraform@v2
         - name: Terraform Init
-          run: terraform init -reconfigure
+          uses: hashicorp/terraform-github-actions@master
+          run: terraform init
           working-directory: ./Terraform
         - name: Terraform validate
           run: terraform validate
