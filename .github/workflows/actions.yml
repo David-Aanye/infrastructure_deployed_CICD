@@ -5,32 +5,34 @@ on:
          branches:
               - main
 
-         jobs: 
-            deploy:
-            name: Deloy-Terraform-Infrast
-         runs-on: ubuntu-latest
+         
+         
+jobs: 
+    deploy:
+     - name: Deloy-Terraform-Infrast
+    runs-on: ubuntu-latest
 
-         env:
-         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    env:
+     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-         steps:
-         - name: Checkout Repo
-           uses: actions/checkout@v2
-         - name: Setup Terraform
-           uses: hashicorp/setup-terraform@v2
-         - name: Terraform Init
-           run: terraform validate
-           working-directory: ./Terraform
-         - name: Terraform validate
-           run: terraform validate
-           working-directory: ./Terraform
-         - name: Terraform Plan
-           run: terraform plan
-           working-directory: ./Terraform
-         - name: Terraform Apply
-           run: terraform apply -auto-approve
-           working-directory: ./Terraform
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v2
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2
+    - name: Terraform Init
+      run: terraform validate
+      working-directory: ./Terraform
+    - name: Terraform validate
+      run: terraform validate
+      working-directory: ./Terraform
+    - name: Terraform Plan
+      run: terraform plan
+      working-directory: ./Terraform
+    - name: Terraform Apply
+      run: terraform apply -auto-approve
+      working-directory: ./Terraform
 
           
            
