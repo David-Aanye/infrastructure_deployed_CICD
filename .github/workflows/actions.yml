@@ -9,9 +9,7 @@ jobs:
     deploy:
        name: Deloy-Terraform-Infrast
        runs-on: ubuntu-latest
-       defaults:
-         run:
-            working-directory: ./terraform
+       
 
        steps:
         - name: Checkout Repo
@@ -28,12 +26,16 @@ jobs:
           uses: hashicorp/setup-terraform@v2
         - name: Terraform Init
           run: terraform init
+          working-directory: ./Terraform
         - name: Terraform validate
           run: terraform validate
+          working-directory: ./Terraform
         - name: Terraform Plan
           run: terraform plan
+          working-directory: ./Terraform
         - name: Terraform Apply
           run: terraform apply -auto-approve
+          working-directory: ./Terraform
            
 
           
