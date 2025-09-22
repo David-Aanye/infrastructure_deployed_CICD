@@ -26,4 +26,4 @@ jobs:
           working-directory: ./Terraform_config_files
         - name: Terraform Destroy
           run: terraform destroy -auto-approve
-          working-directory: ./TTerraform_config_files
+          working-directory: ./Terraform_config_files
